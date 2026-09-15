@@ -1,0 +1,9 @@
+# segredos
+.env
+.env.*
+!.env.example
+
+# sistema / editor
+node_modules/
+.DS_Store
+*.log

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Configurações · Babel OS</title>
+<meta name="theme-color" content="#030817">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Reino">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/demo-brasil.js" defer></script>
+<script src="js/dados-demo.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="configuracoes" class="">
+<div class="hg-app">
+<aside id="hg-side"></aside>
+<div class="hg-main">
+<header id="hg-top"></header>
+<script src="js/shell.js"></script>
+<main class="hg-content" id="conteudo">
+<div class="hg-page-head"><div><h1>Configurações</h1><p>Fonte de dados e perfil.</p></div></div>
+<div class="hg-duas hg-encher">
+<section class="hg-panel hg-encher hg-rolar">
+  <div class="hg-head"><div><h2 class="hg-title">Conexão com a API</h2><p class="hg-sub">Os painéis leem os endpoints descritos em <code>app/API.md</code>.</p></div></div>
+  <form class="hg-form" id="form-config">
+    <div class="hg-field"><label for="api">URL base da API</label><input class="hg-input" id="api" name="api" type="url" placeholder="https://api.suaempresa.com/v1"><small>Fica salva apenas neste navegador.</small></div>
+    <div class="hg-field"><label for="token">Token de acesso (opcional)</label><input class="hg-input" id="token" name="token" type="password" autocomplete="off"><small>Enviado como <code>Authorization: Bearer</code>.</small></div>
+    <div class="hg-field"><label for="usuario">Seu nome</label><input class="hg-input" id="usuario" name="usuario" type="text" autocomplete="name"></div>
+    <div class="hg-field"><label for="bairro">Seu endereço no Reino</label><div style="display:grid;grid-template-columns:2fr 70px 2fr;gap:.5rem"><input class="hg-input" id="cidade" name="cidade" placeholder="Cidade" autocomplete="address-level2"><input class="hg-input" id="uf" name="uf" placeholder="UF" maxlength="2" autocomplete="address-level1"><input class="hg-input" id="bairro" name="bairro" placeholder="Bairro"></div><small>Ao logar, o globo voa até o seu bairro.</small></div>
+    <div class="hg-toolbar"><button class="hg-btn is-cyan" type="submit">Salvar</button><button class="hg-btn is-ghost" type="button" id="testar">Testar conexão</button></div>
+  </form>
+</section>
+<section class="hg-panel hg-encher hg-rolar">
+  <div class="hg-head"><h2 class="hg-title">Notificações</h2></div>
+  <label class="hg-switch"><span><b style="color:#fff">Dados de demonstração</b><br><small style="color:var(--text-2)">Usa 10 pessoas e 29 empresas fictícias quando não há API.</small></span> <input type="checkbox" name="demo" form="form-config"></label>
+  <label class="hg-switch">Novos matches <input type="checkbox" checked></label>
+  <label class="hg-switch">Conquistas desbloqueadas <input type="checkbox" checked></label>
+  <label class="hg-switch">Novas edições da Revista <input type="checkbox"></label>
+</section>
+</div>
+</main>
+</div>
+</div>
+<nav class="hg-tabbar" aria-label="Navegação principal"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Início</span></a><a href="mapa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mapa</span></a><a href="guildas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/><path d="M9 8v7l3-2 3 2V8"/></svg><span>Guildas</span></a><a href="bolsa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span>Bolsa</span></a><a href="pesquisa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Buscar</span></a></nav>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<title>Pré-cadastro · Reino · Babel OS</title>
+<meta name="theme-color" content="#030817">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/shell.js"></script>
+<script src="js/brasil.js" defer></script>
+<script src="js/demo-brasil.js" defer></script>
+<script src="js/dados-demo.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="pre-cadastro">
+<header class="hg-top hg-top-publico">
+  <a class="hg-brand" href="pre-cadastro.html" style="padding:0"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fe3ff"/><stop offset="1" stop-color="#8b5cff"/></linearGradient></defs><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="none" stroke="url(#lg)" stroke-width="2.4"/><path d="M11 12.5 16 10l5 2.5v7L16 22l-5-2.5z" fill="url(#lg)"/></svg><span>Babel <b>OS</b></span></a>
+  <span class="hg-sub">Pré-cadastro no Reino</span>
+  <a class="hg-btn is-ghost" href="index.html" style="margin-left:auto">Já tenho conta</a>
+</header>
+<main class="hg-content hg-pre">
+  <div class="hg-page-head">
+    <div><h1>Escolha seu território no Reino</h1><p>O seu título define o tamanho do mapa que você comanda.</p></div>
+    <div class="hg-topo">
+      <article class="hg-panel hg-afiliado">
+        <div class="hg-head"><span class="hg-afiliado-rotulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Link de afiliado</span></div>
+        <div class="hg-afiliado-linha">
+          <label class="sr-only" for="afiliado-link">Link de afiliado</label>
+          <input class="hg-input" id="afiliado-link" data-afiliado-link readonly value="—">
+          <button class="hg-btn is-green" data-copiar disabled>Copiar</button>
+        </div>
+        <div class="hg-afiliado-meta"><span data-afiliado-aviso></span></div>
+      </article>
+    </div>
+  </div>
+
+  <section class="hg-panel" aria-labelledby="t-titulo">
+    <div class="hg-head"><div><h2 class="hg-title" id="t-titulo">1 · Seu título</h2><p class="hg-sub">Imperador vê o Brasil · Rei, o Brasil por regiões · Príncipe, uma região · Duque ou abaixo, um estado com as cidades</p></div></div>
+    <div class="hg-titulos-nivel" id="titulos-nivel" role="radiogroup" aria-label="Título"></div>
+  </section>
+
+  <section class="hg-panel hg-map-panel hg-pre-mapa hg-encher" aria-labelledby="t-mapa">
+    <div class="hg-head">
+      <div><h2 class="hg-title" id="t-mapa">2 · Mapa do Reino</h2><p class="hg-sub" id="mapa-aviso"></p></div>
+      <span class="hg-pill" id="nivel-chip">—</span>
+    </div>
+    <form class="hg-toolbar hg-pre-filtros" onsubmit="return false" aria-label="Filtros">
+      <span class="hg-sub" style="display:flex;align-items:center;gap:.35rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></svg>Filtros</span>
+      <label id="campo-regiao" class="hg-field-inline">Região <select class="hg-select" id="f-regiao"></select></label>
+      <label id="campo-estado" class="hg-field-inline">Estado <select class="hg-select" id="f-estado"></select></label>
+      <label id="campo-cidade" class="hg-field-inline">Cidade <select class="hg-select" id="f-cidade"></select></label>
+      <label class="hg-field-inline">Nicho <select class="hg-select" id="f-nicho"><option value="">Todos os nichos</option></select></label>
+    </form>
+
+    <div data-painel="mapa">
+      <div class="hg-br-wrap">
+        <svg id="br-svg" class="hg-br" role="img" aria-label="Mapa do Brasil">
+          <defs><filter id="br-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g id="br-estados"></g><g id="br-cidades"></g><g id="br-rotulos"></g>
+        </svg>
+        <div class="hg-map-scan"></div>
+      </div>
+      <p class="hg-credito">Contornos: svg-maps (Victor Cazanave), CC BY 4.0</p>
+    </div>
+    <div data-painel="noticias" class="hg-rolar" hidden><div id="noticias"></div></div>
+    <div data-painel="busca" class="hg-rolar" hidden>
+      <form class="hg-toolbar" id="form-busca" style="margin-bottom:1rem">
+        <label class="sr-only" for="busca-q">Busca inteligente</label>
+        <input class="hg-input" id="busca-q" type="search" placeholder="Descreva o que procura, ex.: contador perto de Campinas" style="flex:1;max-width:none">
+        <button class="hg-btn is-cyan" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 7.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg>Buscar</button>
+      </form>
+      <div id="busca-res"></div>
+    </div>
+
+    <div class="hg-map-dock" role="tablist" aria-label="Opções do mapa">
+      <button class="hg-icon-btn" role="tab" data-aba="mapa" aria-selected="true" data-rotulo="Mapa" title="Mapa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></button>
+      <button class="hg-icon-btn" role="tab" data-aba="noticias" aria-selected="false" data-rotulo="Notícias" title="Notícias de afiliados e finanças"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2M8 8h5M8 12h5M8 16h3"/></svg></button>
+      <button class="hg-icon-btn" role="tab" data-aba="busca" aria-selected="false" data-rotulo="Busca IA" title="Busca inteligente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 7.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></button>
+    </div>
+  </section>
+
+  <section class="hg-panel hg-resumo" aria-live="polite">
+    <div><span class="hg-sub">Título</span><b id="resumo-titulo">—</b></div>
+    <div><span class="hg-sub">Território</span><b id="resumo-territorio">—</b></div>
+    <span class="hg-sub" id="resumo-dica"></span>
+    <a class="hg-btn is-cyan" id="continuar" href="https://www.babel-os.com/cadastro">Continuar cadastro →</a>
+  </section>
+</main>
+</body>
+</html>

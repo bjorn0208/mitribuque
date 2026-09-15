@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bolsa de Valores · Babel OS</title>
+<meta name="theme-color" content="#030817">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Reino">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/bolsa.js" defer></script>
+<script src="js/demo-brasil.js" defer></script>
+<script src="js/dados-demo.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="bolsa" class="">
+<div class="hg-app">
+<aside id="hg-side"></aside>
+<div class="hg-main">
+<header id="hg-top"></header>
+<script src="js/shell.js"></script>
+<main class="hg-content" id="conteudo">
+
+<div class="hg-tape" aria-label="Cotações em tempo real">
+  <div class="hg-tape-trilha" id="tape-trilha"><span class="hg-tape-vazio">Carregando cotações…</span></div>
+</div>
+<section class="hg-bolsa-hero" aria-label="BabelCoin">
+  <img src="img/babelcoin-banner.webp" alt="BabelCoin — Beyond Borders" width="1374" height="750" fetchpriority="high">
+  <div class="hg-bolsa-hero-info">
+    <div><h1>Bolsa de Valores</h1><p>Ações, FIIs, ETFs e BDRs da B3 · <span id="atualizado"></span></p></div>
+    <span class="hg-bolsa-pregao" id="pregao"><i></i>Conectando…</span>
+  </div>
+</section>
+<p class="hg-bolsa-aviso" id="aviso-fonte" hidden>⚠ Cotações <b>fictícias</b> de demonstração. Defina <code>HGBRASIL_KEY</code> no servidor para ver a B3 real.</p>
+<section class="hg-kpis" id="destaques" aria-label="Destaques do dia"></section>
+<section class="hg-panel hg-encher">
+  <div class="hg-head" style="flex-wrap:wrap">
+    <div><h2 class="hg-title">Minha lista</h2><p class="hg-sub">Toque num ativo para ver os detalhes</p></div>
+    <form class="hg-toolbar" id="form-ticker">
+      <label class="sr-only" for="novo-ticker">Adicionar ativo</label>
+      <input class="hg-input" id="novo-ticker" placeholder="Adicionar: PETR4, HGLG11…" autocomplete="off" style="min-width:200px">
+      <button class="hg-btn is-cyan" type="submit">Adicionar</button>
+      <label class="sr-only" for="ordem">Ordenar</label>
+      <select class="hg-select" id="ordem"><option value="variacao">Maior variação</option><option value="valor">Maior preço</option><option value="volume">Maior volume</option><option value="nome">Nome</option></select>
+      <button class="hg-btn is-ghost" type="button" id="restaurar">Lista padrão</button>
+    </form>
+  </div>
+  <div class="hg-bolsa-cab" aria-hidden="true"><span>Ativo</span><span>Preço</span><span>Variação</span><span>Sessão</span><span>Mín · Máx</span><span>Volume</span><span></span></div>
+  <div class="hg-bolsa-lista hg-rolar" id="cards" role="list"></div>
+  <p class="hg-credito" style="margin-top:.4rem">Dados: HG Brasil Finance · B3. Valores com atraso conforme o plano da chave.</p>
+</section>
+
+</main>
+</div>
+</div>
+<nav class="hg-tabbar" aria-label="Navegação principal"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Início</span></a><a href="mapa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mapa</span></a><a href="guildas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/><path d="M9 8v7l3-2 3 2V8"/></svg><span>Guildas</span></a><a href="bolsa.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span>Bolsa</span></a><a href="pesquisa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Buscar</span></a></nav>
+</body>
+</html>

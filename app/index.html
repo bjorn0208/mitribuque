@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard · Babel OS</title>
+<meta name="theme-color" content="#030817">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Reino">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/geo-mundo.js" defer></script>
+<script src="js/geo-brasil.js" defer></script>
+<script src="js/globo.js" defer></script>
+<script src="js/demo-brasil.js" defer></script>
+<script src="js/dados-demo.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="inicio" class="">
+<div class="hg-app">
+<aside id="hg-side"></aside>
+<div class="hg-main">
+<header id="hg-top"></header>
+<script src="js/shell.js"></script>
+<main class="hg-content" id="conteudo">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rg-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset=".5" stop-color="#f5c76a"/><stop offset="1" stop-color="#e0a33c"/></linearGradient></defs></svg>
+<div class="hg-page-head">
+  <div><h1 data-saudacao>Olá</h1><p>Veja o que está acontecendo no seu Reino hoje.</p></div>
+  <div class="hg-topo" data-zona="topo" data-rotulo="Topo" data-aceita="afiliado">
+    <article class="hg-panel hg-afiliado" id="afiliado" data-widget="afiliado" data-grupo="afiliado" data-titulo="Link de afiliado" data-descricao="Seu link de indicação, indicados e comissões">
+      <div class="hg-head"><span class="hg-afiliado-rotulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Link de afiliado</span><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <div class="hg-afiliado-linha">
+        <label class="sr-only" for="afiliado-link">Seu link de afiliado</label>
+        <input class="hg-input" id="afiliado-link" data-afiliado-link readonly value="—">
+        <button class="hg-btn is-green" data-copiar disabled>Copiar</button>
+      </div>
+      <div class="hg-afiliado-meta"><span>Indicados <b data-afiliado-indicados>—</b></span><span>Comissões pendentes <b data-afiliado-comissoes>—</b></span><span data-afiliado-aviso></span></div>
+    </article>
+  </div>
+  <button class="hg-btn is-ghost" data-hg-widgets><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>Personalizar</button>
+</div>
+<section class="hg-kpis" aria-label="Indicadores do Reino" data-zona="kpis" data-rotulo="Indicadores" data-aceita="kpi">
+  <article class="hg-panel hg-kpi" data-kpi="empresas" data-widget="kpi-empresas" data-grupo="kpi" data-titulo="Empresas no Reino" data-descricao="Indicador do Reino"><div class="hg-head"><span class="hg-kpi-label">Empresas no Reino</span><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="hg-glow-num is-empty"><span data-v>—</span></div><div class="hg-kpi-foot">Carregando…</div></article>
+  <article class="hg-panel hg-kpi" data-kpi="avaliacoes" data-widget="kpi-avaliacoes" data-grupo="kpi" data-titulo="Avaliações" data-descricao="Indicador do Reino"><div class="hg-head"><span class="hg-kpi-label">Avaliações</span><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="hg-glow-num is-empty"><span data-v>—</span></div><div class="hg-kpi-foot">Carregando…</div></article>
+  <article class="hg-panel hg-kpi" data-kpi="cidades" data-widget="kpi-cidades" data-grupo="kpi" data-titulo="Cidades ativas" data-descricao="Indicador do Reino"><div class="hg-head"><span class="hg-kpi-label">Cidades ativas</span><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="hg-glow-num is-empty"><span data-v>—</span></div><div class="hg-kpi-foot">Carregando…</div></article>
+  <article class="hg-panel hg-kpi" data-kpi="notaMedia" data-widget="kpi-notaMedia" data-grupo="kpi" data-titulo="Nota média" data-descricao="Indicador do Reino"><div class="hg-head"><span class="hg-kpi-label">Nota média</span><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="hg-glow-num is-empty"><span data-v>—</span><small>★</small></div><div class="hg-kpi-foot">Carregando…</div></article>
+</section>
+<section class="hg-ops hg-encher">
+  <div class="hg-col" data-zona="esquerda" data-rotulo="Coluna esquerda" data-aceita="coluna">
+    <article class="hg-panel is-social" data-widget="rede-social" data-grupo="coluna" data-titulo="Rede social" data-descricao="Últimas publicações do Reino">
+      <div class="hg-head"><div><h2 class="hg-title">Rede social</h2><p class="hg-sub">Últimas publicações do Reino</p></div><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <div id="feed"></div>
+      <a class="hg-btn is-block" href="rede-social.html" style="margin-top:.9rem">Abrir rede social</a>
+    </article>
+    <article class="hg-panel is-reputacao" data-widget="reputacao" data-grupo="coluna" data-titulo="Score de Reputação" data-descricao="Média e distribuição das estrelas"><div class="hg-head"><div><h3 class="hg-title">Score de Reputação</h3><p class="hg-sub">Média das estrelas recebidas</p></div><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div id="reputacao"></div></article>
+  </div>
+  <div class="hg-col" data-zona="centro" data-rotulo="Centro" data-aceita="largo coluna"><article class="hg-panel hg-map-panel hg-globo-panel" data-widget="mapa" data-grupo="largo" data-titulo="Globo do Reino" data-descricao="Globo digital: Brasil, estados, cidades, bairros e empresários">
+    <div class="hg-head">
+      <div><h2 class="hg-title">Globo do Reino</h2><p class="hg-sub">Gire o planeta, entre no Brasil e desça até os empresários do bairro</p></div><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="globo"></div>
+    <div class="hg-map-dock"><a class="hg-icon-btn" href="configuracoes.html" title="Perfil" data-rotulo="Perfil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></a><a class="hg-icon-btn" href="pesquisa.html" title="Pesquisa" data-rotulo="Pesquisa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><a class="hg-icon-btn" href="revista.html" title="Revista" data-rotulo="Revista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h11l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 8h5M8 12h8M8 16h8"/></svg></a><a class="hg-icon-btn" href="vitrine.html" title="Vitrine" data-rotulo="Vitrine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 4h14l2 5M3 9h18v11H3zM3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></svg></a></div>
+  </article></div>
+  <div class="hg-col" data-zona="direita" data-rotulo="Coluna direita" data-aceita="coluna">
+    <article class="hg-panel is-conquistas" data-widget="conquistas" data-grupo="coluna" data-titulo="Conquistas" data-descricao="Progresso e título atual">
+      <div class="hg-head"><div><h2 class="hg-title">Conquistas</h2><p class="hg-sub">Sua evolução no Reino</p></div><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <div class="hg-ring">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(80,140,255,.14)" stroke-width="9"/>
+          <circle id="anel-arco" class="hg-ring-arc" cx="60" cy="60" r="50" fill="none" stroke="url(#rg-gold)" stroke-width="9" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16"/></svg>
+        <div class="hg-ring-val"><span class="hg-glow-num hg-gold-glow is-empty" id="anel-txt">—</span><span id="anel-rotulo">Progresso</span></div>
+      </div>
+      <div id="metricas"></div>
+      <a class="hg-btn is-ghost is-block" href="conquistas.html">Ver conquistas</a>
+    </article>
+    <article class="hg-panel is-match" data-widget="match" data-grupo="coluna" data-titulo="Match Reino" data-descricao="Empresas complementares perto de você">
+      <div class="hg-head"><div><h2 class="hg-title">Match Reino</h2><p class="hg-sub">Empresas complementares perto de você</p></div><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <div id="match"></div>
+      <a class="hg-btn is-block" href="match.html" style="margin-top:.9rem">Ver todos os matches</a>
+    </article>
+    <article class="hg-panel" data-widget="cadastros" data-grupo="coluna" data-titulo="Cadastros ao longo do tempo" data-descricao="Novas empresas por período"><div class="hg-head"><h3 class="hg-title">Empresas no Reino</h3><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div id="an-tempo"></div></article>
+    <article class="hg-panel" data-widget="nichos" data-grupo="coluna" data-titulo="Principais nichos" data-descricao="Participação de cada nicho"><div class="hg-head"><h3 class="hg-title">Principais nichos</h3><button class="hg-x" data-close aria-label="Ocultar widget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div id="an-nichos"></div></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<nav class="hg-tabbar" aria-label="Navegação principal"><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Início</span></a><a href="mapa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mapa</span></a><a href="guildas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/><path d="M9 8v7l3-2 3 2V8"/></svg><span>Guildas</span></a><a href="bolsa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span>Bolsa</span></a><a href="pesquisa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Buscar</span></a></nav>
+</body>
+</html>
